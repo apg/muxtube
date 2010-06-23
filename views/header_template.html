@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head> 
+   <title>muxtube</title> 
+   <link type="text/css" rel="stylesheet" href="/static/css/screen.css" /> 
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+   <script type="text/javascript" src="/static/js/swfobject.js"></script> 
+</head> 
+<body> 
+   <div id="wrapper"> 
+      <div id="header"> 
+         <h1>muxtube</h1> 
+         <div class="navigation"> 
+            %if getattr(request, 'username', ''):
+                hello <a href="/{{ request.username }}">{{ request.username }}</a>! <a href="/settings">settings</a> / <a href="/logout">logout</a>
+            %end
+
+            %if settings:
+            <label for="display-video"> 
+               display video?
+               <input type="checkbox" id="display-video" checked="checked"/> 
+            </label> 
+            %end
+         </div> 
+      </div> 
+      <!-- end header -->

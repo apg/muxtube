@@ -1,0 +1,165 @@
+ehtml, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+ margin: 0;
+ padding: 0;
+ border: 0;
+ outline: 0;
+ font-size: 100%;
+ vertical-align: baseline;
+ background: transparent;
+}
+body {
+ line-height: 1;
+ font-size: 62.5%;
+ margin: 0; 
+ padding: 0;
+ font-family: Helvetica, Verdana;
+}
+ol, ul {
+ list-style: none;
+}
+blockquote, q {
+ quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+ content: '';
+ content: none;
+}
+ 
+/* remember to define focus styles! */
+:focus {
+ outline: 0;
+}
+ 
+/* remember to highlight inserts somehow! */
+ins {
+ text-decoration: none;
+}
+del {
+ text-decoration: line-through;
+}
+ 
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+ border-collapse: collapse;
+ border-spacing: 0;
+}
+
+/* essential classes */
+.clearfix:after {
+ content: "."; 
+ display: block; 
+ height: 0; 
+ clear: both; 
+ visibility: hidden;
+}
+.clearfix { display: inline-table; }
+/* \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* */
+
+#wrapper {
+ 
+}
+#player-container {
+ position: absolute;
+ z-index: 1000;
+}
+#header {
+ background-color: #000000;
+ color: #ffffff;
+ padding: .4em;
+}
+#header h1 {
+ display: inline;
+ font-size: 2.0em;
+}
+#header .navigation {
+ float: right;
+ text-align: right;
+}
+#subheader h1 {
+ background-color: #99aa99;
+ color: #ffffff;
+ font-size: 3.0em;
+ padding: .3em;
+}
+#playlist {
+ display: block;
+}
+li.track {
+ position: relative;
+ display: block;
+ padding: .4em .7em;
+ border-top: 1px solid #888888;
+ z-index: 100;
+}
+li.track:hover {
+ background: #eee;
+ color: #333;
+}
+li.track h2 {
+ float: left;
+ width: 80%;
+ font-size: 5.0em;
+ font-weight: normal;
+}
+
+li.track .progress {
+ float: right;
+ text-align: right;
+ width: 200px;
+ font-size: 9.0em;
+ color: green;
+}
+
+li.track .progress .paused {
+ color: #0000ff;
+}
+
+li.track .loader {
+ position: absolute;
+ left: 0;
+ top: 0;
+ width: 1px;
+ height: 3px;
+ z-index: -1000;
+ overflow: hidden;
+}
+li.track .loader-loading { 
+ background: #888;
+ opacity: .25;
+ -moz-opacity: .25;
+ filter: alpha(opacity=25);
+}
+li.track .indicator {
+ position: absolute;
+ left: 0;
+ top: 0;
+ z-index: -999;
+ width: 1px;
+ height: 3px;
+}
+li.track .indicator-playing {
+ background: #888;
+ opacity: .25;
+ -moz-opacity: .25;
+ filter: alpha(opacity=25);
+}
+li.track .info {
+ z-index: 1;
+}
+
+#footer {
+ margin: 40px 10px;
+ color: #999;
+}

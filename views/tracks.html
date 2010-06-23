@@ -1,0 +1,25 @@
+%include header_template title='muxtube tracks', foreground_color=foreground_color, request=request, settings=True
+
+<div id="subheader">
+   <h1 style="background-color: #{{ user.color }}; color: #{{ foreground_color(user.color) }}; ">{{ user.username }}'s tracks</h1>
+</div>
+
+<ul id="playlist">
+   %for track in tracks:
+   <li class="track" id="youtube-{{ track.video_id }}"> 
+      <div class="loader loader-loading"></div> 
+      <div class="indicator indicator-playing"></div> 
+      <div class="info clearfix"> 
+         <h2>{{ track.title }}</h2> 
+         <div class="progress"> 
+            <span id="progress-{{ track.video_id }}"></span> 
+         </div> 
+      </div> 
+      <p> 
+         <a href="http://www.youtube.com/watch?v={{ track.video_id }}">link</a> 
+      </p> 
+   </li> 
+   %end
+</ul>
+
+%include footer_template include_player=True

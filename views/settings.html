@@ -1,0 +1,40 @@
+
+
+%include header_template title='muxtube settings', foreground_color=foreground_color, request=request, settings=False
+
+<div id="subheader">
+   <h1 style="background-color: #{{ user.color }}; color: #{{ foreground_color(user.color) }};">settings</h1>
+</div>
+
+<div class="form">
+   <form action="/settings" method="post">
+      <h3>General</h3>
+      %if color_error:
+      <p class="error">{{ general_error }}</p>
+      %end
+      <p>
+         <label for="color">Color:</label>
+         <input type="text" id="color" name="color" value="{{ user.color }}" maxlength="6" size="6" />
+      </p>
+
+      <h3>Password</h3>
+      %if password_error:
+      <p class="error">{{ password_error }}</p>
+      %end
+      <p>
+         <label for="old_password">Old Password:</label>
+         <input type="old_password" name="old_password" id="old_password" />
+      </p>
+      <p>
+         <label for="new_password">New Password:</label>
+         <input type="password" name="new_password" id="new_password" />
+      </p>
+      <p>
+         <input type="submit" value="Save" />
+      </p>
+   </form>
+</div>
+
+
+
+%include footer_template include_player=False

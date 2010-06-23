@@ -1,0 +1,14 @@
+
+
+%include header_template title='muxtube settings', foreground_color=foreground_color, request=request, settings=False
+
+<div id="subheader"">
+   <h1 style="background-color: #{{ user.color }}; color: #{{ foreground_color(user.color) }}; >bookmarklet</h1>
+</div>
+
+<p>Drag the bookmarklet below to your bookmarks bar. It contains a special token for you to be able to add links--no login required. Don't give your bookmarklet to anyone else, or they'll be able to add tracks to your muxtube.</p>
+
+<p><a href="">save to muxtube</a></p>
+
+
+%include footer_template include_player=False
